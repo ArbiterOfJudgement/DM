@@ -54,6 +54,204 @@
         <attribute name="title">
          <string>Анализ временных рядов</string>
         </attribute>
+        <widget class="QWidget" name="verticalLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>491</width>
+           <height>641</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QGroupBox" name="ParametersGroupboxTSA">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>130</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>Выбор параметров, для которых будут расчитаны статистические характеристики</string>
+            </property>
+            <widget class="QWidget" name="gridLayoutWidget_5">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>20</y>
+               <width>471</width>
+               <height>101</height>
+              </rect>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="0" column="0">
+               <widget class="QListWidget" name="ParametersWidgetTSA_2"/>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="timeDiapazonTSA">
+            <property name="maximumSize">
+             <size>
+              <width>489</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>Выбор временного диапазона</string>
+            </property>
+            <widget class="QWidget" name="gridLayoutWidget_3">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>10</y>
+               <width>471</width>
+               <height>61</height>
+              </rect>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="0" column="0">
+               <widget class="QLabel" name="startDateLabelTSA_2">
+                <property name="text">
+                 <string>Начальная дата</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QDateTimeEdit" name="fromDateTimeTSA_2"/>
+              </item>
+              <item row="1" column="3">
+               <widget class="QPushButton" name="selectToDateTSA_2">
+                <property name="text">
+                 <string>Выбрать</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QDateTimeEdit" name="toDateTimeTSA_2"/>
+              </item>
+              <item row="0" column="2">
+               <widget class="QLabel" name="endDateLabelTSA_2">
+                <property name="text">
+                 <string>Конечная дата</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QPushButton" name="selectFromDateTSA_2">
+                <property name="text">
+                 <string>Выбрать</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="StaticFeaturesGroupboxTSA">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>170</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>Выбор рассчитываемых статистических характеристик</string>
+            </property>
+            <widget class="QWidget" name="gridLayoutWidget">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>22</y>
+               <width>471</width>
+               <height>141</height>
+              </rect>
+             </property>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="RelevantFeaturesLabelTSA_2">
+                <property name="text">
+                 <string>Релевантные характеристики</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QListWidget" name="RelevantFeaturesTSA_2"/>
+              </item>
+              <item row="1" column="1">
+               <widget class="QListWidget" name="IrrelevantFeaturesTSA_2"/>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="IrrelevantFeaturesLabelTSA_2">
+                <property name="text">
+                 <string>Нерелевантные характеристики</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="StartGroupBoxTSA">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>Запуск вычислений</string>
+            </property>
+            <widget class="QWidget" name="gridLayoutWidget_2">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>20</y>
+               <width>471</width>
+               <height>25</height>
+              </rect>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_2">
+              <item row="0" column="0">
+               <widget class="QPushButton" name="StartButtonTSA">
+                <property name="text">
+                 <string>Выбрать</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="ResultGroupBoxTSA">
+            <property name="title">
+             <string>Результат вычислений</string>
+            </property>
+            <widget class="QWidget" name="gridLayoutWidget_4">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>20</y>
+               <width>471</width>
+               <height>161</height>
+              </rect>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_4">
+              <item row="0" column="0">
+               <widget class="QTableWidget" name="ResultTableTSA"/>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
        <widget class="QWidget" name="MDC_tab">
         <property name="cursor">
@@ -120,6 +318,16 @@
          <property name="cursor">
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
+         <item>
+          <property name="text">
+           <string>Русский</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>English</string>
+          </property>
+         </item>
         </widget>
        </item>
       </layout>
