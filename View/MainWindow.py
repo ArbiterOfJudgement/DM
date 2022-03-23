@@ -11,6 +11,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from pyqt_checkbox_list_widget.checkBoxListWidget import CheckBoxListWidget
 
+from .AdministratorWindow import Ui_AdministratorWindow
+from .DataLoadWindow import Ui_LoadDataWindow
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -48,10 +50,8 @@ class Ui_MainWindow(object):
         self.gridLayout_5 = QtWidgets.QGridLayout(self.gridLayoutWidget_5)
         self.gridLayout_5.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_5.setObjectName("gridLayout_5")
-        #Кастомный листбокс
         ParametersListboxTSA = CheckBoxListWidget()
         self.gridLayout_5.addWidget(ParametersListboxTSA, 0, 0, 1, 1)
-        #Конец кастомного листбокса
         self.verticalLayout_3.addWidget(self.ParametersGroupboxTSA)
         self.timeDiapazonTSA = QtWidgets.QGroupBox(self.verticalLayoutWidget_2)
         self.timeDiapazonTSA.setMaximumSize(QtCore.QSize(489, 80))
@@ -95,7 +95,6 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.RelevantFeaturesLabelTSA_2, 0, 0, 1, 1)
         RelevantFeaturesTSA = CheckBoxListWidget()
         self.gridLayout.addWidget(RelevantFeaturesTSA, 1, 0, 1, 1)
-
         IrrelevantFeaturesTSA = CheckBoxListWidget()
         self.gridLayout.addWidget(IrrelevantFeaturesTSA, 1, 1, 1, 1)
         self.IrrelevantFeaturesLabelTSA_2 = QtWidgets.QLabel(self.gridLayoutWidget)
@@ -195,12 +194,19 @@ class Ui_MainWindow(object):
         self.language_comboBox.setItemText(0, _translate("MainWindow", "Русский"))
         self.language_comboBox.setItemText(1, _translate("MainWindow", "English"))
 
+        #
+        self.administrator_button.clicked.connect(self.openAdministratorWindow)
+        #
+    
+    def openAdministratorWindow(self):
+        AdministratorWindow = QtWidgets.QDialog()
+        ui = Ui_AdministratorWindow()
+        ui.setupUi(AdministratorWindow)
+        AdministratorWindow.exec_()
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+    def __init__(self):
+        DataLoadWindow = QtWidgets.QDialog()        
+        ui = Ui_LoadDataWindow()
+        ui.setupUi(DataLoadWindow)
+        DataLoadWindow.exec_()
+        

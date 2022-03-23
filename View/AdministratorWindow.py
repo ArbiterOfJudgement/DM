@@ -50,13 +50,3 @@ class Ui_AdministratorWindow(object):
         self.RNN_group.setTitle(_translate("AdministratorWindow", "Прогнозирование качества"))
         self.DBSCAN_group.setTitle(_translate("AdministratorWindow", "DBSCAN"))
         self.MDC_group.setTitle(_translate("AdministratorWindow", "Сжатие данных"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    AdministratorWindow = QtWidgets.QWidget()
-    ui = Ui_AdministratorWindow()
-    ui.setupUi(AdministratorWindow)
-    AdministratorWindow.show()
-    sys.exit(app.exec_())

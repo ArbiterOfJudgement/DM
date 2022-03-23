@@ -45,7 +45,7 @@
         <cursorShape>ArrowCursor</cursorShape>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="TSA_tab">
         <property name="cursor">
@@ -276,6 +276,137 @@
         <attribute name="title">
          <string>Прогнозирование качества</string>
         </attribute>
+        <widget class="QWidget" name="verticalLayoutWidget_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>9</y>
+           <width>501</width>
+           <height>621</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QGroupBox" name="groupBox_4">
+            <property name="title">
+             <string>GroupBox</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="timeDiapazonTSA_2">
+            <property name="maximumSize">
+             <size>
+              <width>489</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>Выбор временного диапазона</string>
+            </property>
+            <widget class="QWidget" name="gridLayoutWidget_6">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>10</y>
+               <width>471</width>
+               <height>61</height>
+              </rect>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="0" column="0">
+               <widget class="QLabel" name="startDateLabelTSA_3">
+                <property name="text">
+                 <string>Начальная дата</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QDateTimeEdit" name="fromDateTimeTSA_3"/>
+              </item>
+              <item row="1" column="3">
+               <widget class="QPushButton" name="selectToDateTSA_3">
+                <property name="text">
+                 <string>Выбрать</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QDateTimeEdit" name="toDateTimeTSA_3"/>
+              </item>
+              <item row="0" column="2">
+               <widget class="QLabel" name="endDateLabelTSA_3">
+                <property name="text">
+                 <string>Конечная дата</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QPushButton" name="selectFromDateTSA_3">
+                <property name="text">
+                 <string>Выбрать</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="StartGroupBoxTSA_2">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>Запуск вычислений</string>
+            </property>
+            <widget class="QWidget" name="gridLayoutWidget_7">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>20</y>
+               <width>471</width>
+               <height>25</height>
+              </rect>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_7">
+              <item row="0" column="0">
+               <widget class="QPushButton" name="StartButtonTSA_2">
+                <property name="text">
+                 <string>Выбрать</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="title">
+             <string>GroupBox</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="title">
+             <string>GroupBox</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox">
+            <property name="title">
+             <string>GroupBox</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </widget>
      </item>
