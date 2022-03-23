@@ -14,9 +14,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_AdministratorWindow(object):
     def setupUi(self, AdministratorWindow):
         AdministratorWindow.setObjectName("AdministratorWindow")
-        AdministratorWindow.resize(400, 725)
+        AdministratorWindow.resize(400, 760)
+        AdministratorWindow.setMinimumSize(QtCore.QSize(400, 760))
+        AdministratorWindow.setMaximumSize(QtCore.QSize(400, 760))
         self.verticalLayoutWidget = QtWidgets.QWidget(AdministratorWindow)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 401, 721))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 401, 761))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -33,6 +35,10 @@ class Ui_AdministratorWindow(object):
         self.MDC_group = QtWidgets.QGroupBox(self.verticalLayoutWidget)
         self.MDC_group.setObjectName("MDC_group")
         self.verticalLayout.addWidget(self.MDC_group)
+        self.progressBar = QtWidgets.QProgressBar(self.verticalLayoutWidget)
+        self.progressBar.setProperty("value", 24)
+        self.progressBar.setObjectName("progressBar")
+        self.verticalLayout.addWidget(self.progressBar)
 
         self.retranslateUi(AdministratorWindow)
         QtCore.QMetaObject.connectSlotsByName(AdministratorWindow)

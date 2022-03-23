@@ -11,16 +11,17 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from pyqt_checkbox_list_widget.checkBoxListWidget import CheckBoxListWidget
 
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(500, 725)
-        MainWindow.setMinimumSize(QtCore.QSize(500, 725))
-        MainWindow.setMaximumSize(QtCore.QSize(500, 725))
+        MainWindow.resize(500, 755)
+        MainWindow.setMinimumSize(QtCore.QSize(500, 755))
+        MainWindow.setMaximumSize(QtCore.QSize(500, 755))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 501, 701))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 501, 731))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setSizeConstraint(QtWidgets.QLayout.SetMinimumSize)
@@ -49,7 +50,6 @@ class Ui_MainWindow(object):
         self.gridLayout_5.setObjectName("gridLayout_5")
         #Кастомный листбокс
         ParametersListboxTSA = CheckBoxListWidget()
-        #checkBoxListWidget.addItems(['a', 'b', 'c', 'd', 'd', 'd', 'd', 'd'])
         self.gridLayout_5.addWidget(ParametersListboxTSA, 0, 0, 1, 1)
         #Конец кастомного листбокса
         self.verticalLayout_3.addWidget(self.ParametersGroupboxTSA)
@@ -95,7 +95,6 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.RelevantFeaturesLabelTSA_2, 0, 0, 1, 1)
         RelevantFeaturesTSA = CheckBoxListWidget()
         self.gridLayout.addWidget(RelevantFeaturesTSA, 1, 0, 1, 1)
-        RelevantFeaturesTSA.addItems(['cock', 'balls', 'boobs', 'ass', 'personality'])
 
         IrrelevantFeaturesTSA = CheckBoxListWidget()
         self.gridLayout.addWidget(IrrelevantFeaturesTSA, 1, 1, 1, 1)
@@ -160,6 +159,10 @@ class Ui_MainWindow(object):
         self.language_comboBox.addItem("")
         self.horizontalLayout.addWidget(self.language_comboBox)
         self.verticalLayout.addLayout(self.horizontalLayout)
+        self.progressBar = QtWidgets.QProgressBar(self.verticalLayoutWidget)
+        self.progressBar.setProperty("value", 24)
+        self.progressBar.setObjectName("progressBar")
+        self.verticalLayout.addWidget(self.progressBar)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
