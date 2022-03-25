@@ -86,14 +86,14 @@
              </property>
              <layout class="QGridLayout" name="gridLayout_5">
               <item row="0" column="0">
-               <widget class="QListWidget" name="ParametersWidgetTSA_2"/>
+               <widget class="QListWidget" name="ParametersWidgetTSA"/>
               </item>
              </layout>
             </widget>
            </widget>
           </item>
           <item>
-           <widget class="QGroupBox" name="timeDiapazonTSA">
+           <widget class="QGroupBox" name="TimeDiapazonTSA">
             <property name="maximumSize">
              <size>
               <width>489</width>
@@ -113,37 +113,31 @@
               </rect>
              </property>
              <layout class="QGridLayout" name="gridLayout_3">
+              <item row="1" column="0">
+               <widget class="QDateTimeEdit" name="FromDateTimeTSA">
+                <property name="cursor">
+                 <cursorShape>IBeamCursor</cursorShape>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QDateTimeEdit" name="ToDateTimeTSA">
+                <property name="cursor">
+                 <cursorShape>IBeamCursor</cursorShape>
+                </property>
+               </widget>
+              </item>
               <item row="0" column="0">
-               <widget class="QLabel" name="startDateLabelTSA_2">
+               <widget class="QLabel" name="StartDateLabelTSA">
                 <property name="text">
                  <string>Начальная дата</string>
                 </property>
                </widget>
               </item>
-              <item row="1" column="0">
-               <widget class="QDateTimeEdit" name="fromDateTimeTSA_2"/>
-              </item>
-              <item row="1" column="3">
-               <widget class="QPushButton" name="selectToDateTSA_2">
-                <property name="text">
-                 <string>Выбрать</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="2">
-               <widget class="QDateTimeEdit" name="toDateTimeTSA_2"/>
-              </item>
-              <item row="0" column="2">
-               <widget class="QLabel" name="endDateLabelTSA_2">
+              <item row="0" column="1">
+               <widget class="QLabel" name="EndDateLabelTSA">
                 <property name="text">
                  <string>Конечная дата</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="1">
-               <widget class="QPushButton" name="selectFromDateTSA_2">
-                <property name="text">
-                 <string>Выбрать</string>
                 </property>
                </widget>
               </item>
@@ -173,20 +167,20 @@
              </property>
              <layout class="QGridLayout" name="gridLayout">
               <item row="0" column="0">
-               <widget class="QLabel" name="RelevantFeaturesLabelTSA_2">
+               <widget class="QLabel" name="RelevantFeaturesLabelTSA">
                 <property name="text">
                  <string>Релевантные характеристики</string>
                 </property>
                </widget>
               </item>
               <item row="1" column="0">
-               <widget class="QListWidget" name="RelevantFeaturesTSA_2"/>
+               <widget class="QListWidget" name="RelevantFeaturesTSA"/>
               </item>
               <item row="1" column="1">
-               <widget class="QListWidget" name="IrrelevantFeaturesTSA_2"/>
+               <widget class="QListWidget" name="IrrelevantFeaturesTSA"/>
               </item>
               <item row="0" column="1">
-               <widget class="QLabel" name="IrrelevantFeaturesLabelTSA_2">
+               <widget class="QLabel" name="IrrelevantFeaturesLabelTSA">
                 <property name="text">
                  <string>Нерелевантные характеристики</string>
                 </property>
@@ -219,6 +213,9 @@
              <layout class="QGridLayout" name="gridLayout_2">
               <item row="0" column="0">
                <widget class="QPushButton" name="StartButtonTSA">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="text">
                  <string>Выбрать</string>
                 </property>
@@ -244,7 +241,11 @@
              </property>
              <layout class="QGridLayout" name="gridLayout_4">
               <item row="0" column="0">
-               <widget class="QTableWidget" name="ResultTableTSA"/>
+               <widget class="QTableWidget" name="ResultTableTSA">
+                <property name="cursor" stdset="0">
+                 <cursorShape>IBeamCursor</cursorShape>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -282,70 +283,180 @@
            <x>0</x>
            <y>9</y>
            <width>501</width>
-           <height>621</height>
+           <height>651</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
-           <widget class="QGroupBox" name="groupBox_4">
-            <property name="title">
-             <string>GroupBox</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGroupBox" name="timeDiapazonTSA_2">
+           <widget class="QGroupBox" name="ModelSelectGroupBoxRNN">
             <property name="maximumSize">
              <size>
-              <width>489</width>
-              <height>80</height>
+              <width>16777215</width>
+              <height>50</height>
              </size>
             </property>
             <property name="title">
-             <string>Выбор временного диапазона</string>
+             <string>Выбор модели</string>
             </property>
-            <widget class="QWidget" name="gridLayoutWidget_6">
+            <widget class="QComboBox" name="ModelComboBoxRNN">
+             <property name="geometry">
+              <rect>
+               <x>11</x>
+               <y>20</y>
+               <width>471</width>
+               <height>21</height>
+              </rect>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="ModelDescriptionGroupBoxRNN">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>Описание модели</string>
+            </property>
+            <widget class="QTextBrowser" name="ModelDescriptionRNN">
+             <property name="geometry">
+              <rect>
+               <x>11</x>
+               <y>17</y>
+               <width>471</width>
+               <height>101</height>
+              </rect>
+             </property>
+             <property name="cursor" stdset="0">
+              <cursorShape>IBeamCursor</cursorShape>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="SettingsGroupBoxRNN">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>270</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>Настройки прогнозирования</string>
+            </property>
+            <widget class="QWidget" name="gridLayoutWidget_8">
              <property name="geometry">
               <rect>
                <x>10</x>
-               <y>10</y>
+               <y>19</y>
                <width>471</width>
-               <height>61</height>
+               <height>251</height>
               </rect>
              </property>
-             <layout class="QGridLayout" name="gridLayout_6">
-              <item row="0" column="0">
-               <widget class="QLabel" name="startDateLabelTSA_3">
-                <property name="text">
-                 <string>Начальная дата</string>
-                </property>
-               </widget>
-              </item>
+             <layout class="QGridLayout" name="gridLayout_8">
               <item row="1" column="0">
-               <widget class="QDateTimeEdit" name="fromDateTimeTSA_3"/>
-              </item>
-              <item row="1" column="3">
-               <widget class="QPushButton" name="selectToDateTSA_3">
-                <property name="text">
-                 <string>Выбрать</string>
+               <widget class="QGroupBox" name="RelevantFeaturesGroupBoxRNN">
+                <property name="title">
+                 <string>Выбор влияющих параметров производства</string>
                 </property>
+                <widget class="QListWidget" name="RelevantFeaturesRNN">
+                 <property name="geometry">
+                  <rect>
+                   <x>9</x>
+                   <y>20</y>
+                   <width>231</width>
+                   <height>121</height>
+                  </rect>
+                 </property>
+                 <property name="cursor" stdset="0">
+                  <cursorShape>IBeamCursor</cursorShape>
+                 </property>
+                </widget>
                </widget>
               </item>
-              <item row="1" column="2">
-               <widget class="QDateTimeEdit" name="toDateTimeTSA_3"/>
-              </item>
-              <item row="0" column="2">
-               <widget class="QLabel" name="endDateLabelTSA_3">
-                <property name="text">
-                 <string>Конечная дата</string>
+              <item row="0" column="0">
+               <widget class="QGroupBox" name="QualityIndicatorGroupBoxRNN">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>45</height>
+                 </size>
                 </property>
+                <property name="title">
+                 <string>Прогнозируемый показатель качества</string>
+                </property>
+                <widget class="QComboBox" name="QualitIndicatorComboBoxRNN">
+                 <property name="geometry">
+                  <rect>
+                   <x>10</x>
+                   <y>20</y>
+                   <width>231</width>
+                   <height>22</height>
+                  </rect>
+                 </property>
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                </widget>
                </widget>
               </item>
               <item row="1" column="1">
-               <widget class="QPushButton" name="selectFromDateTSA_3">
-                <property name="text">
-                 <string>Выбрать</string>
+               <widget class="QGroupBox" name="TimeDiapazonRNN">
+                <property name="maximumSize">
+                 <size>
+                  <width>600</width>
+                  <height>150</height>
+                 </size>
                 </property>
+                <property name="title">
+                 <string>Выбор временного диапазона</string>
+                </property>
+                <widget class="QWidget" name="gridLayoutWidget_6">
+                 <property name="geometry">
+                  <rect>
+                   <x>2</x>
+                   <y>18</y>
+                   <width>211</width>
+                   <height>121</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_6">
+                  <item row="2" column="0">
+                   <widget class="QDateTimeEdit" name="FromDateTimeRNN">
+                    <property name="cursor">
+                     <cursorShape>IBeamCursor</cursorShape>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QDateTimeEdit" name="ToDateTimeRNN">
+                    <property name="cursor">
+                     <cursorShape>IBeamCursor</cursorShape>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="EndDateLabelRNN">
+                    <property name="text">
+                     <string>Конечная дата</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="StartDateLabelRNN">
+                    <property name="text">
+                     <string>Начальная дата</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
                </widget>
               </item>
              </layout>
@@ -353,7 +464,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QGroupBox" name="StartGroupBoxTSA_2">
+           <widget class="QGroupBox" name="StartGroupBoxRNN">
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -374,35 +485,33 @@
              </property>
              <layout class="QGridLayout" name="gridLayout_7">
               <item row="0" column="0">
-               <widget class="QPushButton" name="StartButtonTSA_2">
+               <widget class="QPushButton" name="StartButtonRNN">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="text">
-                 <string>Выбрать</string>
+                 <string>Прогнозировать</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QPushButton" name="TrendsButtonRNN">
+                <property name="maximumSize">
+                 <size>
+                  <width>469</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="text">
+                 <string>Показать тренды</string>
                 </property>
                </widget>
               </item>
              </layout>
             </widget>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGroupBox" name="groupBox_3">
-            <property name="title">
-             <string>GroupBox</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGroupBox" name="groupBox_2">
-            <property name="title">
-             <string>GroupBox</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGroupBox" name="groupBox">
-            <property name="title">
-             <string>GroupBox</string>
-            </property>
            </widget>
           </item>
          </layout>
