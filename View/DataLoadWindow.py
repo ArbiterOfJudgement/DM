@@ -69,4 +69,3 @@ class Ui_LoadDataWindow(object):
         self.EndDateLabelLOAD.setText(_translate("LoadDataWindow", "Конечная дата"))
         self.StartDateLabelLOAD.setText(_translate("LoadDataWindow", "Начальная дата"))
         self.loadButton.setText(_translate("LoadDataWindow", "Загрузить данные"))
-

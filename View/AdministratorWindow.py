@@ -214,6 +214,3 @@ class Ui_AdministratorWindow(object):
         self.AccuracyLabelRNN.setText(_translate("AdministratorWindow", "Точность:"))
         self.RocPushButtonRNN.setText(_translate("AdministratorWindow", "ROC-кривая"))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.RNN_tab), _translate("AdministratorWindow", "Прогнозирование качества"))
-
-
-if __name__ == "__main__":
