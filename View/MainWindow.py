@@ -9,10 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from pyqt_checkbox_list_widget.checkBoxListWidget import CheckBoxListWidget
 
-from .AdministratorWindow import Ui_AdministratorWindow
-from .DataLoadWindow import Ui_LoadDataWindow
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -156,42 +153,18 @@ class Ui_MainWindow(object):
         self.ModelComboBoxRNN.setObjectName("ModelComboBoxRNN")
         self.verticalLayout_2.addWidget(self.ModelSelectGroupBoxRNN)
         self.ModelDescriptionGroupBoxRNN = QtWidgets.QGroupBox(self.verticalLayoutWidget_3)
-        self.ModelDescriptionGroupBoxRNN.setMaximumSize(QtCore.QSize(16777215, 120))
+        self.ModelDescriptionGroupBoxRNN.setMaximumSize(QtCore.QSize(16777215, 150))
         self.ModelDescriptionGroupBoxRNN.setObjectName("ModelDescriptionGroupBoxRNN")
         self.ModelDescriptionRNN = QtWidgets.QTextBrowser(self.ModelDescriptionGroupBoxRNN)
-        self.ModelDescriptionRNN.setGeometry(QtCore.QRect(11, 17, 471, 101))
+        self.ModelDescriptionRNN.setGeometry(QtCore.QRect(11, 17, 471, 121))
         self.ModelDescriptionRNN.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.IBeamCursor))
         self.ModelDescriptionRNN.setObjectName("ModelDescriptionRNN")
         self.verticalLayout_2.addWidget(self.ModelDescriptionGroupBoxRNN)
-        self.SettingsGroupBoxRNN = QtWidgets.QGroupBox(self.verticalLayoutWidget_3)
-        self.SettingsGroupBoxRNN.setMaximumSize(QtCore.QSize(16777215, 270))
-        self.SettingsGroupBoxRNN.setObjectName("SettingsGroupBoxRNN")
-        self.gridLayoutWidget_8 = QtWidgets.QWidget(self.SettingsGroupBoxRNN)
-        self.gridLayoutWidget_8.setGeometry(QtCore.QRect(10, 19, 471, 251))
-        self.gridLayoutWidget_8.setObjectName("gridLayoutWidget_8")
-        self.gridLayout_8 = QtWidgets.QGridLayout(self.gridLayoutWidget_8)
-        self.gridLayout_8.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout_8.setObjectName("gridLayout_8")
-        self.RelevantFeaturesGroupBoxRNN = QtWidgets.QGroupBox(self.gridLayoutWidget_8)
-        self.RelevantFeaturesGroupBoxRNN.setObjectName("RelevantFeaturesGroupBoxRNN")
-        self.RelevantFeaturesRNN = QtWidgets.QListWidget(self.RelevantFeaturesGroupBoxRNN)
-        self.RelevantFeaturesRNN.setGeometry(QtCore.QRect(9, 20, 231, 121))
-        self.RelevantFeaturesRNN.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.IBeamCursor))
-        self.RelevantFeaturesRNN.setObjectName("RelevantFeaturesRNN")
-        self.gridLayout_8.addWidget(self.RelevantFeaturesGroupBoxRNN, 1, 0, 1, 1)
-        self.QualityIndicatorGroupBoxRNN = QtWidgets.QGroupBox(self.gridLayoutWidget_8)
-        self.QualityIndicatorGroupBoxRNN.setMaximumSize(QtCore.QSize(16777215, 45))
-        self.QualityIndicatorGroupBoxRNN.setObjectName("QualityIndicatorGroupBoxRNN")
-        self.QualitIndicatorComboBoxRNN = QtWidgets.QComboBox(self.QualityIndicatorGroupBoxRNN)
-        self.QualitIndicatorComboBoxRNN.setGeometry(QtCore.QRect(10, 20, 231, 22))
-        self.QualitIndicatorComboBoxRNN.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.QualitIndicatorComboBoxRNN.setObjectName("QualitIndicatorComboBoxRNN")
-        self.gridLayout_8.addWidget(self.QualityIndicatorGroupBoxRNN, 0, 0, 1, 1)
-        self.TimeDiapazonRNN = QtWidgets.QGroupBox(self.gridLayoutWidget_8)
+        self.TimeDiapazonRNN = QtWidgets.QGroupBox(self.verticalLayoutWidget_3)
         self.TimeDiapazonRNN.setMaximumSize(QtCore.QSize(600, 150))
         self.TimeDiapazonRNN.setObjectName("TimeDiapazonRNN")
         self.gridLayoutWidget_6 = QtWidgets.QWidget(self.TimeDiapazonRNN)
-        self.gridLayoutWidget_6.setGeometry(QtCore.QRect(2, 18, 211, 121))
+        self.gridLayoutWidget_6.setGeometry(QtCore.QRect(10, 18, 471, 121))
         self.gridLayoutWidget_6.setObjectName("gridLayoutWidget_6")
         self.gridLayout_6 = QtWidgets.QGridLayout(self.gridLayoutWidget_6)
         self.gridLayout_6.setContentsMargins(0, 0, 0, 0)
@@ -210,8 +183,7 @@ class Ui_MainWindow(object):
         self.StartDateLabelRNN = QtWidgets.QLabel(self.gridLayoutWidget_6)
         self.StartDateLabelRNN.setObjectName("StartDateLabelRNN")
         self.gridLayout_6.addWidget(self.StartDateLabelRNN, 1, 0, 1, 1)
-        self.gridLayout_8.addWidget(self.TimeDiapazonRNN, 1, 1, 1, 1)
-        self.verticalLayout_2.addWidget(self.SettingsGroupBoxRNN)
+        self.verticalLayout_2.addWidget(self.TimeDiapazonRNN)
         self.StartGroupBoxRNN = QtWidgets.QGroupBox(self.verticalLayoutWidget_3)
         self.StartGroupBoxRNN.setMaximumSize(QtCore.QSize(16777215, 50))
         self.StartGroupBoxRNN.setObjectName("StartGroupBoxRNN")
@@ -280,9 +252,6 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.DBSCAN_tab), _translate("MainWindow", "DBSACN"))
         self.ModelSelectGroupBoxRNN.setTitle(_translate("MainWindow", "Выбор модели"))
         self.ModelDescriptionGroupBoxRNN.setTitle(_translate("MainWindow", "Описание модели"))
-        self.SettingsGroupBoxRNN.setTitle(_translate("MainWindow", "Настройки прогнозирования"))
-        self.RelevantFeaturesGroupBoxRNN.setTitle(_translate("MainWindow", "Выбор влияющих параметров производства"))
-        self.QualityIndicatorGroupBoxRNN.setTitle(_translate("MainWindow", "Прогнозируемый показатель качества"))
         self.TimeDiapazonRNN.setTitle(_translate("MainWindow", "Выбор временного диапазона"))
         self.EndDateLabelRNN.setText(_translate("MainWindow", "Конечная дата"))
         self.StartDateLabelRNN.setText(_translate("MainWindow", "Начальная дата"))
@@ -294,19 +263,12 @@ class Ui_MainWindow(object):
         self.language_comboBox.setItemText(0, _translate("MainWindow", "Русский"))
         self.language_comboBox.setItemText(1, _translate("MainWindow", "English"))
 
-        #
-        self.administrator_button.clicked.connect(self.openAdministratorWindow)
-        #
-    
-    def openAdministratorWindow(self):
-        AdministratorWindow = QtWidgets.QDialog()
-        ui = Ui_AdministratorWindow()
-        ui.setupUi(AdministratorWindow)
-        AdministratorWindow.exec_()
 
-    def __init__(self):
-        DataLoadWindow = QtWidgets.QDialog()        
-        ui = Ui_LoadDataWindow()
-        ui.setupUi(DataLoadWindow)
-        DataLoadWindow.exec_()
-        
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
