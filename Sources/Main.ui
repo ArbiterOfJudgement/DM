@@ -45,7 +45,7 @@
         <cursorShape>ArrowCursor</cursorShape>
        </property>
        <property name="currentIndex">
-        <number>3</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="TSA_tab">
         <property name="cursor">
@@ -267,7 +267,7 @@
          <cursorShape>ArrowCursor</cursorShape>
         </property>
         <attribute name="title">
-         <string>DBSACN</string>
+         <string>DBSCAN</string>
         </attribute>
        </widget>
        <widget class="QWidget" name="RNN_tab">

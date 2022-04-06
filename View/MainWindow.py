@@ -231,7 +231,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -249,7 +249,7 @@ class Ui_MainWindow(object):
         self.ResultGroupBoxTSA.setTitle(_translate("MainWindow", "Результат вычислений"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.TSA_tab), _translate("MainWindow", "Анализ временных рядов"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.MDC_tab), _translate("MainWindow", "Сжатие данных"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.DBSCAN_tab), _translate("MainWindow", "DBSACN"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.DBSCAN_tab), _translate("MainWindow", "DBSCAN"))
         self.ModelSelectGroupBoxRNN.setTitle(_translate("MainWindow", "Выбор модели"))
         self.ModelDescriptionGroupBoxRNN.setTitle(_translate("MainWindow", "Описание модели"))
         self.TimeDiapazonRNN.setTitle(_translate("MainWindow", "Выбор временного диапазона"))

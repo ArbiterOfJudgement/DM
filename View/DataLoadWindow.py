@@ -69,3 +69,13 @@ class Ui_LoadDataWindow(object):
         self.EndDateLabelLOAD.setText(_translate("LoadDataWindow", "Конечная дата"))
         self.StartDateLabelLOAD.setText(_translate("LoadDataWindow", "Начальная дата"))
         self.loadButton.setText(_translate("LoadDataWindow", "Загрузить данные"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    LoadDataWindow = QtWidgets.QWidget()
+    ui = Ui_LoadDataWindow()
+    ui.setupUi(LoadDataWindow)
+    LoadDataWindow.show()
+    sys.exit(app.exec_())
