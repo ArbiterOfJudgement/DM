@@ -9,9 +9,8 @@ import dbWorker
 
 from datetime import datetime
 
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtWidgets import *
-
 
 from View.MainWindow import Ui_MainWindow
 from View.DataLoadWindow import Ui_LoadDataWindow
@@ -31,6 +30,9 @@ AdministratorWindow = QtWidgets.QDialog()
 
 dbw = dbWorker.dbWorker()
 tsa = TSAModule.TSA()
+
+SelectedParametersNamesTSA = []
+SelectedParametersIndexesTSA = []
 
 def openMainWindow():
     mainUI.setupUi(MainWindow)
@@ -89,9 +91,20 @@ def initializeLists(ui):
         ##RNN
         mainUI.FromDateTimeRNN.setDateTime(datetime.strptime(dbw.minDate, '%Y-%m-%d %H:%M:%S'))
         ##TSA
-        ParametersListTSA = CheckBoxListWidget()
-        ParametersListTSA.addItems(dbw.getNames(dbw.ruNames, dbw.x))
-        mainUI.gridLayout_5.addWidget(ParametersListTSA)
+        items = dbw.getNames(dbw.ruNames, dbw.x)
+        outputItems = dbw.getNames(dbw.ruNames, dbw.y)
+        outputItems = [x for x in outputItems if str(x) != 'nan']
+        for item in items:
+            newitem = QListWidgetItem()
+            newitem.setText(QApplication.translate("Dialog", item, None))
+            newitem.setFlags(newitem.flags() | QtCore.Qt.ItemIsUserCheckable)
+            newitem.setCheckState(QtCore.Qt.Unchecked)
+            mainUI.ParametersTSA.addItem(newitem)
+        for item in outputItems:
+            newitem = QListWidgetItem()
+            newitem.setText(QApplication.translate("Dialog", item, None))
+            mainUI.OutputParametersTSA.addItem(newitem)
+        mainUI.ParametersTSA.itemChanged.connect(ParametersSelectionTSA)
 
 def langchange():
     if (mainUI.language_comboBox.currentIndex() == 0):
@@ -147,15 +160,32 @@ def initializeActions(ui):
         mainUI.StartButtonRNN.clicked.connect(openAdministratorWindow)
         mainUI.ModelComboBoxRNN.currentIndexChanged.connect(openAdministratorWindow)
         ##TSS
-        mainUI.StartButtonTSA.clicked.connect(TimeSeriesAnalyser)
+        mainUI.StartButtonTSA.clicked.connect(PrepareDataTSA)
 
+def ParametersSelectionTSA():
+    SelectedParametersNamesTSA.clear()
+    SelectedParametersIndexesTSA.clear()
+    for i in range(mainUI.ParametersTSA.count() - 1):
+        if (mainUI.ParametersTSA.item(i).checkState() == QtCore.Qt.Checked):
+            SelectedParametersNamesTSA.append(mainUI.ParametersTSA.item(i).text())
+            SelectedParametersIndexesTSA.append(list(dbw.ruNames.keys())[list(dbw.ruNames.values()).index(mainUI.ParametersTSA.item(i).text())])
 
-def TimeSeriesAnalyser():
-    #items = mainUI.ParametersListTSA.selectedItems();
+def PrepareDataTSA():
+    SelectedOutputParameterIndexTSA = list(dbw.ruNames.keys())[list(dbw.ruNames.values()).index(mainUI.OutputParametersTSA.currentItem().text())]
+    SelectedOutputParameterNameTSA = mainUI.OutputParametersTSA.currentItem().text()
+    defects = pd.DataFrame({str(SelectedOutputParameterNameTSA): pd.Series(dbw.y[SelectedOutputParameterIndexTSA])})
+    defects["time"] = pd.Series(dbw.dates)
     timeseries = pd.DataFrame({'time': pd.Series(dbw.dates)})
-    for items in dbw.x:
-        timeseries[items] = items;
-    tsa.TimeSeriesAnalyser(timeseries);
+    indexes = []
+    for i in range(timeseries.count()[0]):
+        indexes.append("1")
+    timeseries["id"] = indexes
+    defects["id"] = indexes
+    for i in range(len(SelectedParametersIndexesTSA)):
+        newparamlist = dbw.x[SelectedParametersIndexesTSA[i]]
+        timeseries[SelectedParametersNamesTSA[i]] = newparamlist
+    tsa.TimeSeriesAnalyser(timeseries, defects)
+
 
 
 if __name__ == "__main__":
